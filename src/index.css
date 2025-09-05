@@ -2,8 +2,3 @@
 @tailwind components;
 @tailwind utilities;
 
-@layer base {
-  body {
-    @apply font-sans bg-brand-beige text-brand-blue;
-  }
-}
