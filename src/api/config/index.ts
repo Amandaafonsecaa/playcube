@@ -6,13 +6,11 @@ export const API_CONFIG = {
 
 export async function httpGet<T>(path: string, params?: Record<string, any>): Promise<T> {
     const url = new URL(`${API_CONFIG.baseURL}$path`);
-    if (params){
-        Object.entries(params).forEach(([k,v]) => v != undefined && url.searchParams.set(k, String(v))); //explica essa linha
-    }
+    
     const res = await fetch(url.toString(), { //explica esse bloco
         headers: {
             Accept: "application/json",
-            Authorization: `Bearer ${API_CONFIG.bearer},`
+            Authorization: `Bearer ${API_CONFIG.bearer}`
         },
     });
     if(!res.ok){
