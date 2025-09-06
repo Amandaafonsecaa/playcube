@@ -1,3 +1,5 @@
+import { q } from '../utils/query'; // Ajuste o caminho
+
 export const API_CONFIG = {
   baseURL: import.meta.env.VITE_API_BASE_URL as string,
   bearer: import.meta.env.VITE_API_BEARER as string,
@@ -5,8 +7,10 @@ export const API_CONFIG = {
 
 
 export async function httpGet<T>(path: string, params?: Record<string, any>): Promise<T> {
-    const url = new URL(`${API_CONFIG.baseURL}$path`);
-    
+    const fullPath = `${path}${q(params)}`
+    const url = new URL(fullPath, API_CONFIG.baseURL);
+
+
     const res = await fetch(url.toString(), { //explica esse bloco
         headers: {
             Accept: "application/json",
