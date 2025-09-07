@@ -27,12 +27,25 @@ export function getMoviesCredit(id: number){
     }).then((r) => r.data);
 }
 
-export function getMovieVideos(id: number){
-    return api.get(`/movie/${id}/videos`, {
-        params: {
-            language: "pt-BR"
-        }
-    }).then((r) => r.data);
+export async function getMovieMedia(id: number) {
+  const { data } = await api.get(`/movie/${id}`, {
+    params: {
+      language: "pt-BR",
+      // traz tudo junto:
+      append_to_response: "videos,images",
+      // deixa vir imagem em qualquer idioma (útil qdo pt-BR não tem):
+      include_image_language: "pt,null,en",
+    },
+  });
+
+  return {
+    videos: data.videos?.results ?? [],
+    images: {
+      backdrops: data.images?.backdrops ?? [],
+      posters: data.images?.posters ?? [],
+      logos: data.images?.logos ?? [],
+    },
+  };
 }
 
 export function getMoviesRecommendations(id: number){
