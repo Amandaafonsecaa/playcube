@@ -33,3 +33,11 @@ export function getSeriesVideos(id: number){
         }
     }).then(r => r.data);
 }
+
+export function getSeriesReviews(id: number, page = 1) {
+  return api
+    .get(`/tv/${id}/reviews`, {
+      params: { language: "pt-BR", page },
+    })
+    .then((r) => r.data);
+}

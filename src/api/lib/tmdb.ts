@@ -1,4 +1,4 @@
-export function poster(path?: string | null, size: "w92"|"w185"|"w300"|"w500"="w300"){
+export function poster(path?: string | null, size: "w92"|"w185"|"w300"|"w400"|"w500"="w300"){
     return path ? `https://image.tmdb.org/t/p/${size}${path}` : ""
 }
 
