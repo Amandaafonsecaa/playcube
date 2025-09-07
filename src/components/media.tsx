@@ -82,7 +82,7 @@ export default function Media({ videos, images, title = "Mídia" }: Props) {
                 Ver mais
             </button>
           </div>
-          <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 gap-3">
+          <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 gap-3 pb-[3rem]">
             {backs.slice(0, 4).map((img, i) => (
               <img
                 key={`bd-${i}`}

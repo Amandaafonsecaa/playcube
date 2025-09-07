@@ -4,6 +4,7 @@ import AboutContainer from "../features/AboutContainer";
 import CastContainer from "../features/CastContainer"
 import ReviewContainer from "../features/ReviewsContainer"; 
 import MediaContainer from "../features/MediaContainer";
+import PopularMoviesContainer from "../features/PopularMoviesContainer";
 
 export default function Details(){
 
@@ -23,6 +24,8 @@ export default function Details(){
             <MediaContainer
             id={Number(346698)}
             type={"movie"} 
+            />
+            <PopularMoviesContainer 
             />
         </div>
     )

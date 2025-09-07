@@ -1,6 +1,6 @@
 import { useEffect, useState } from "react";
 import { getPopularMovies } from "../api/services/moviesService";
-import PopularMoviesView from "./PopularMoviesView";
+import Recomendation from "../components/recomendation"
 
 export default function PopularMoviesContainer(){
     const [data, setData] = useState<any[]>([]);
@@ -13,6 +13,6 @@ export default function PopularMoviesContainer(){
         .catch((e) => setErr(e.message))
         .finally(() => setLoading(false));
     }, []);
-    return <PopularMoviesView data={data} loading={loading} error={err} />;
+    return <Recomendation data={data} loading={loading} error={err} />;
 }
 
