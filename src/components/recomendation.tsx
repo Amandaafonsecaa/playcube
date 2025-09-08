@@ -20,7 +20,7 @@ export default function PopularMovies({ data, loading, error }: Props) {
 
   if (loading) return <p className="text-center">Carregando…</p>;
   if (error) return <p className="text-center text-red-600">Erro: {error}</p>;
-  if (data.length === 0) return <p className="text-center">Nenhum filme encontrado</p>;
+  if (data.length === 0) return null;
 
   return (
     <section className="bg-brand-blue py-12 md:px-16 lg:px-24">
