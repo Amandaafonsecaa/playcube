@@ -1,6 +1,7 @@
 import { poster } from "../api/lib/tmdb";
 import { useRef } from "react";
 import { ChevronLeftIcon, ChevronRightIcon } from "@heroicons/react/24/solid"; 
+import Button from "./ui/button";
 
 interface Props {
   cast: any[];
@@ -19,12 +20,10 @@ export default function Cast({ cast }: Props) {
 
   return (
     <section className="bg-brand-beigeSoft py-12 px-4 md:px-16 lg:px-24">
-      <div className="flex items-center mb-7">
+      <div className="flex items-center mb-7 ml-14">
         <h2 className="text-2xl font-bold text-brand-blue">Elenco</h2>
-       
-        <button className="bg-brand-blue text-white py-1 px-4 rounded-full ml-4 text-sm">
-          Ver mais
-        </button>
+        <Button 
+        text="Ver mais"/>
       </div>
 
       {/* Container pai para posicionar os botões */}

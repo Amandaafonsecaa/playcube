@@ -1,5 +1,6 @@
 // src/components/Media.tsx
 import { poster, backdrop } from "../api/lib/tmdb";
+import Button from "./ui/button";
 
 type TmdbVideo = {
   id: string;
@@ -55,9 +56,8 @@ export default function Media({ videos, images, title = "Mídia" }: Props) {
         <div className="mb-8">
           <div className="flex items-center mb-[1rem]">
             <h3 className="text-[1.3rem] mb-2">Trailers</h3> 
-            <button className="bg-brand-blue text-white p-[0.5rem] rounded-[1rem] ml-[1rem]">
-                Ver mais
-            </button>
+            <Button 
+            text="Ver mais"/>
           </div>
           <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-4">
             {(trailers.length ? trailers : youTubeVideos).slice(0, 3).map((v) => (
@@ -78,9 +78,8 @@ export default function Media({ videos, images, title = "Mídia" }: Props) {
         <div>
           <div className="flex items-center mb-[1rem]">
             <h3 className="text-[1.3rem] mb-2">Imagens</h3> 
-            <button className="bg-brand-blue text-white p-[0.5rem] rounded-[1rem] ml-[1rem]">
-                Ver mais
-            </button>
+            <Button 
+            text="Ver mais"/>
           </div>
           <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 gap-3 pb-[3rem]">
             {backs.slice(0, 4).map((img, i) => (

@@ -1,4 +1,5 @@
 import React from "react";
+import Button from "./ui/button";
 
 interface ReviewProps {
   review: any[];
@@ -7,15 +8,13 @@ interface ReviewProps {
 
 export default function Review({ review, type }: ReviewProps) {
   if (!review.length)
-    return <p className="text-center">Nenhuma review encontrada</p>;
-
+    return null;
   return (
-    <section className="p-[3rem] bg-brand-beige pl-[6rem] pr-[6rem]">
+    <section className="p-[3rem] bg-brand-beige  py-12 px-4 md:px-16 lg:px-24">
       <div className="flex items-center mb-8">
-        <h2 className="text-2xl font-bold text-brand-blue pl-[4rem]">Elenco</h2>
-        <button className="bg-brand-blue text-white p-[0.5rem] rounded-[1rem] ml-[1rem]">
-          Ver mais
-        </button>
+        <h2 className="text-2xl font-bold text-brand-blue pl-[4rem]">Review</h2>
+        <Button 
+        text="Ver mais"/>
       </div>
       <div className="flex items-center justify-center gap-[4rem]">
         {review.slice(0, 2).map((r) => (
