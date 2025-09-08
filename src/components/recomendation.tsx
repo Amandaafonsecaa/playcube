@@ -1,4 +1,4 @@
-import React, { useRef } from "react"; // PRECISA DO useRef
+import { useRef } from "react"; 
 import { poster } from "../api/lib/tmdb";
 import { ChevronLeftIcon, ChevronRightIcon } from "@heroicons/react/24/solid";
 
